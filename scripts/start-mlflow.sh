@@ -47,4 +47,15 @@ until curl -fsS http://127.0.0.1:5001/health >/dev/null 2>&1; do
   sleep 1
 done
 
+MODEL_LOG="$STATE_DIR/model_server.log"
+MODEL_PID_FILE="$STATE_DIR/model_server.pid"
+
+if ! curl -fsS http://127.0.0.1:8317/v1/models -H "Authorization: Bearer 123456" >/dev/null 2>&1; then
+  python3 "$WORKSHOP_ROOT/scripts/model_endpoint_server.py" > "$MODEL_LOG" 2>&1 &
+  MODEL_PID=$!
+  echo "$MODEL_PID" > "$MODEL_PID_FILE"
+  echo "Started model endpoint server at http://127.0.0.1:8317/v1"
+fi
+
 echo "MLflow: http://127.0.0.1:5001"
+

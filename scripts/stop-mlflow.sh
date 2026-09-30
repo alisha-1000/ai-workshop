@@ -19,4 +19,12 @@ else
   echo "MLflow is not running."
 fi
 
+MODEL_PID_FILE="$WORKSHOP_ROOT/.workshop/model_server.pid"
+if [[ -f "$MODEL_PID_FILE" ]]; then
+  MODEL_PID="$(<"$MODEL_PID_FILE")"
+  kill "$MODEL_PID" 2>/dev/null || true
+  rm -f "$MODEL_PID_FILE"
+fi
+
 rm -f "$MLFLOW_PID_FILE"
+
