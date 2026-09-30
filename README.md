@@ -87,8 +87,8 @@ Open `day-0.ipynb`, choose **Python 3.12 — Agentic AI Workshop**, and run one 
 | Session | Topic | Start page |
 | --- | --- | --- |
 | Day 0 pre-work | Setup and one-state AI | [Day 0](day-0/README.md) |
-| Day 1 | Bounded retry and ReAct | [Day 1](day-1/README.md) |
-| Day 2 | Multi-state graphs and routing | [Day 2](day-2/README.md) |
+| Day 1 | Multi-state routing and a bounded retry loop | [Day 1](day-1/README.md) |
+| Day 2 | Streaming and human-in-the-loop | [Day 2](day-2/README.md) |
 | Day 3 | Traces, datasets, and evaluation | [Day 3](day-3/README.md) |
 | Day 4 | Guarded execution tools | [Day 4](day-4/README.md) |
 | Day 5 | Multi-agent stress testing | [Day 5](day-5/README.md) |

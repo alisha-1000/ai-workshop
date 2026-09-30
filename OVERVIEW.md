@@ -19,8 +19,8 @@ Homework deliberately uses different problems so students must transfer the idea
 | Session | New mental model | Learner outcome |
 | --- | --- | --- |
 | Day 0 pre-work | A model call is input → probabilistic output; a graph makes state explicit | Call the model, build a one-node graph, and inspect its state |
-| Day 1 | An agent is a bounded loop, not unlimited reasoning | Build retry and ReAct loops with deterministic stopping rules |
-| Day 2 | Nodes specialize; routers make explicit decisions from state | Build a multi-state debugger with conditional routing |
+| Day 1 | A router picks one specialist from state; a bounded loop stops itself | Route a bug to one specialist branch and run a self-checking retry loop with deterministic limits |
+| Day 2 | Streaming changes when progress is seen; a human can decide inside the loop | Stream a bounded loop's progress, then pause after each step for human review |
 | Day 3 | Traces are evidence; examples plus expectations form an evaluation dataset | Inspect spans and compare three architectures fairly |
 | Day 4 | Tools act on the world and need contracts, limits, and verified outcomes | Verify a proposed fix through a guarded execution tool |
 | Day 5 | Multiple agents help only when roles and handoffs are narrow | Coordinate test design and stress testing through typed state |
@@ -34,7 +34,7 @@ Every day follows the same learning loop:
 1. **Orient:** what we are building, why it matters, and what is not required yet.
 2. **Predict:** identify state, next node, stopping condition, and maximum calls.
 3. **Build:** implement one small checkpoint at a time.
-4. **Observe:** inspect graph state and the MLflow trace.
+4. **Observe:** inspect graph state (and, from Day 3, the MLflow trace).
 5. **Break:** trigger one intentional failure and recover from it.
 6. **Verify:** run deterministic acceptance checks.
 7. **Reflect:** answer one concept question and preview the next day.
